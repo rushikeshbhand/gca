@@ -1,15 +1,11 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./components/header/page.js";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const gilroySemiBold = localFont({
+  src: "../../public/fonts/Gilroy-SemiBold.ttf",
+  variable: "--font-gilroy-semibold",
+  weight: "600", // Corrected to an array
 });
 
 export const metadata = {
@@ -20,9 +16,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${gilroySemiBold.variable} antialiased`}>
+        <Header/>
         {children}
       </body>
     </html>
