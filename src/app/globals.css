@@ -18,3 +18,8 @@
 body {
   font-family: 'Gilroy', sans-serif;
 }
+
+.web-container{
+  max-width: 95vw;
+  margin: 0px auto;
+}

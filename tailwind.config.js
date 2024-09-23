@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true, // centers the container horizontally
+        screens: {
+          DEFAULT: '85vw', // sets max-width to 80vw
+        },
+      },
     },
   },
   plugins: [],
