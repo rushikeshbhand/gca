@@ -3,6 +3,7 @@ import Hero from "./components/hero/page";
 import Achievements from "./components/achievements/page";
 import About from "./components/about/page";
 import SuccessRate from "./components/success-rate/page";
+import OurCourses from "./components/our-courses/page";
 export default function Home() {
   return (
     <div>
@@ -10,6 +11,7 @@ export default function Home() {
       <Achievements />
       <About />
       <SuccessRate />
+      <OurCourses />
     </div>
   );
 }
