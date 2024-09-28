@@ -4,7 +4,7 @@ export default function OurCourses() {
   return (
     <div className="my-20 text-[#4F4D74]">
       {/* common code  */}
-      <div className="text-center">
+      <div className="text-center mx-auto max-w-[80vw]">
         <h2 className="text-2xl md:text-3xl lg:text-5xl">Our Courses</h2>
         <p>
           We offer precisely what you seek for your child - training programs,

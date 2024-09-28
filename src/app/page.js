@@ -4,6 +4,8 @@ import Achievements from "./components/achievements/page";
 import About from "./components/about/page";
 import SuccessRate from "./components/success-rate/page";
 import OurCourses from "./components/our-courses/page";
+import InfiniteSlider from "./components/infinite-slider/page";
+// import JoinUsNow from "./components/join-us-now/page";
 export default function Home() {
   return (
     <div>
@@ -12,6 +14,8 @@ export default function Home() {
       <About />
       <SuccessRate />
       <OurCourses />
+      <InfiniteSlider/>
+      {/* <JoinUsNow /> */}
     </div>
   );
 }
