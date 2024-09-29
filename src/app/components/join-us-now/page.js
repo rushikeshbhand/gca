@@ -7,7 +7,7 @@ export default function JoinUsNow() {
         <h1>Join Us Now!</h1>
       </div>
 
-      <div className="cards text-white flex flex-col justify-center gap-8">
+      <div className="cards text-white flex flex-col justify-center gap-8 max-w-[77vw] mx-auto">
         <div className="card-one flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mt-24 max-w-[100vw] bg-[#6072FA] border-8 border-[#f9f9fa] rounded-3xl drop-shadow-2xl">
           <div className="relative bottom-20 -mb-20">
             <img
