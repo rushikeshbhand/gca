@@ -110,7 +110,7 @@ export default function OurActivities() {
   };
 
   return (
-    <div className="root max-w-[77vw] mx-auto my-20">
+    <div className="root max-w-[77vw] mx-auto -mt-48">
       <div className="flex gap-11 justify-start items-center">
         <img
           src="assets\images\our-activities-logo.svg"
