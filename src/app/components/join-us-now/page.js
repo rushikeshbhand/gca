@@ -17,7 +17,7 @@ export default function JoinUsNow() {
             />
           </div>
 
-          <div className="flex flex-col gap-4 pb-10">
+          <div className="flex flex-col gap-4 pb-10 px-4">
             <h1 className="text-4xl font-extrabold">Book a Franchise</h1>
             <p>
               Begin your teaching venture now, own your <br /> franchise and
@@ -30,7 +30,7 @@ export default function JoinUsNow() {
         </div>
 
         <div className="card-two-three-root flex flex-col lg:flex-row gap-10">
-          <div className="card-two flex flex-col h-[55vh] lg:w-1/3 gap-14 bg-[#74D997] py-16 px-24 border-8 border-[#f9f9fa] rounded-3xl drop-shadow-2xl">
+          <div className="card-two flex flex-col h-[55vh] lg:w-1/3 gap-14 bg-[#74D997] py-16 px-24 border-8 border-[#f9f9fa] justify-center items-center rounded-3xl drop-shadow-2xl">
             <div className="text-white text-4xl font-extrabold whitespace-nowrap">
               <h1>
                 Book Demo <br /> Class Now
@@ -47,7 +47,7 @@ export default function JoinUsNow() {
                 backgroundImage: "url(assets/images/tiger-on-bench.svg)",
                 
               }}
-              className="mx-6 min-h-[98%]"
+              className="mx-6 min-h-[98%] bg-no-repeat"
             >
               <div className="relative top-14 left-16">
                 <h1 className="mb-6 text-4xl whitespace-nowrap">Exam Portal</h1>
