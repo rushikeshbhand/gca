@@ -8,7 +8,7 @@ export default function Hero() {
       <h2> <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"></img> India Book of Record Holder Company</h2>
       <h2>Qualified Instructor</h2>
       </p> */}
-      <img src="assets/images/hero-text.svg" className="absolute mt-12 top-24 sm:mb-0 lg:text-8xl max-w-96 sm:max-w-max lg:min-w-[40rem]" alt="Girl in a jacket" width="500" height="600"></img>
+      <img src="assets/images/hero-text.svg" className="absolute z-50 mt-12 top-24 sm:mb-0 lg:text-8xl max-w-[86vw] sm:max-w-max lg:min-w-[40rem]" alt="Girl in a jacket" width="500" height="600"></img>
       <div
         className="hero-section relative bg-center bg-contain bg-no-repeat mt-28 md:mt-10 
                    h-[20rem] w-full 
