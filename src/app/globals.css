@@ -26,4 +26,22 @@ body {
 
 
 
+/* our courses desktop component  */
+.slick-track{
+  min-height: 70vh;
+}
 
+.custom-arrow {
+  background-color: #16C6EC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+}
+
+.custom-arrow svg {
+  height: 24px;
+  width: 24px;
+}

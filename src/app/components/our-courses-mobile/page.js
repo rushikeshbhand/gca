@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OurCourses() {
+export default function OurCoursesMobile() {
   return (
     <div className="my-20 text-[#4F4D74]">
       {/* common code  */}

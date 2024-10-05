@@ -60,7 +60,7 @@ export default function OurActivities() {
         );
       case "photoGallery":
         return (
-          <div className="flex justify-center items-center h-ful">
+          <div className="flex justify-center items-center h-full">
             <iframe
               width="750"
               height="360"
@@ -76,7 +76,7 @@ export default function OurActivities() {
         );
       case "essentials":
         return (
-          <div className="flex justify-center items-center h-ful">
+          <div className="flex justify-center items-center">
             <iframe
               width="750"
               height="360"
