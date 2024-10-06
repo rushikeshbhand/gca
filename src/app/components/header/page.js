@@ -43,7 +43,7 @@ export default function Header() {
       <div className="flex items-center gap-4">
         {/* Logo */}
         <Image
-          src="/assets/images/gca.png"
+          src="/assets/images/gca-logo.svg"
           alt="logo"
           width={100}
           height={100}
