@@ -38,13 +38,15 @@ export default function Header() {
   return (
     <header className="flex gap-12 sm:gap-52 text-[#4F4D74] items-center w-full p-4 lg:px-20 justify-center">
       <div className="flex items-center gap-4">
-        <Image
-          src="/assets/images/gca-logo.svg"
-          alt="logo"
-          width={100}
-          height={100}
-          className="w-16 md:w-24"
-        />
+        <Link href="/">
+          <Image
+            src="/assets/images/gca-logo.svg"
+            alt="logo"
+            width={100}
+            height={100}
+            className="w-16 md:w-24"
+          />
+        </Link>
       </div>
 
       {/* Desktop Menu */}
@@ -55,7 +57,7 @@ export default function Header() {
               Home
             </Link>
           </li>
-          <img src="/assets/images/list-style.png" alt="separator" />
+          <Image src="/assets/images/list-style.png" alt="separator" width={6} height={6} />
           <li>
             <Link
               href="/components/contact-us"
@@ -65,15 +67,23 @@ export default function Header() {
               Our Courses
             </Link>
           </li>
-          <img src="/assets/images/list-style.png" alt="separator" />
+          <Image src="/assets/images/list-style.png" alt="separator" width={6} height={6} />
           <li>
-            <Link href="/components/exam-portal" className={getLinkStyle("Exam Portal")} onClick={() => handleNavClick("Exam Portal")}>
+            <Link
+              href="/components/exam-portal"
+              className={getLinkStyle("Exam Portal")}
+              onClick={() => handleNavClick("Exam Portal")}
+            >
               Exam Portal
             </Link>
           </li>
-          <img src="/assets/images/list-style.png" alt="separator" />
+          <Image src="/assets/images/list-style.png" alt="separator" width={6} height={6} />
           <li>
-            <Link href="/components/join-our-team" className={getLinkStyle("Join Our Team")} onClick={() => handleNavClick("Join Our Team")}>
+            <Link
+              href="/components/join-our-team"
+              className={getLinkStyle("Join Our Team")}
+              onClick={() => handleNavClick("Join Our Team")}
+            >
               Join Our Team
             </Link>
           </li>
