@@ -42,23 +42,19 @@ export default function JoinUsNow() {
           </div>
 
           <div className="card-three bg-[#17C7EE] h-[55vh] lg:w-2/3 border-8 border-[#f9f9fa] rounded-3xl drop-shadow-2xl">
-            <div
-              style={{
-                backgroundImage: "url(assets/images/tiger-on-bench.svg)",
+            <div className="mx-6 min-h-[98%] bg-no-repeat flex justify-center">
+              <div className="flex flex-col justify-center items-center md:relative md:top-14 md:left-2">
+                <h1 className="mb-6 text-4xl whitespace-nowrap z-10 md:relative md:-left-40">Exam Portal</h1>
                 
-              }}
-              className="mx-6 min-h-[98%] bg-no-repeat"
-            >
-              <div className="relative top-14 left-16">
-                <h1 className="mb-6 text-4xl whitespace-nowrap">Exam Portal</h1>
-                <button className="px-10 py-3 bg-white text-[#6072FA] rounded-3xl border-4 border-[#e3e3e6] w-[180px]">
+                <button className="px-10 py-3 bg-white text-[#6072FA] rounded-3xl border-4 z-20 md:relative md:-left-40 border-[#e3e3e6] w-[180px]">
                   Give Exam
                 </button>
+                <div className="w-[30rem] h-auto relative hidden md:block -z-0 -top-44">
+                  <img src="assets/images/tiger-on-bench.svg" alt="exam portal tiger" />
+                </div>
               </div>
             </div>
-            {/* <div>
-                <img src="assets/images/tiger-on-bench.svg" alt="" />
-              </div> */}
+            
           </div>
         </div>
       </div>
