@@ -125,7 +125,7 @@ export default function OurActivities() {
       <div className="flex flex-col  items-center lg:items-start lg:flex-row text-lg whitespace-nowrap mt-5 md:text-xl lg:text-xl text-[#4F4D74] font-extrabold">
         {/* Left side tabs */}
         <div className=" p-4">
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-3 lg:gap-[3.3rem]">
             <li
               onClick={() => setSelectedTab("youtube")}
               className={`cursor-pointer ${

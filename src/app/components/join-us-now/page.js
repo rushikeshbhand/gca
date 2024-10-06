@@ -49,7 +49,7 @@ export default function JoinUsNow() {
                 <button className="px-10 py-3 bg-white text-[#6072FA] rounded-3xl border-4 z-20 md:relative md:-left-40 border-[#e3e3e6] w-[180px]">
                   Give Exam
                 </button>
-                <div className="w-[30rem] h-auto relative hidden md:block -z-0 -top-44">
+                <div className="w-[30rem] h-auto relative hidden md:block -z-0 -top-44 xl:-top-36">
                   <img src="assets/images/tiger-on-bench.svg" alt="exam portal tiger" />
                 </div>
               </div>
