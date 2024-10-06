@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div>
       <div
-        className="min-h-[90vh] bg-no-repeat flex"
+        className="min-h-[96vh] bg-no-repeat flex md:pb-[5rem]"
         style={{
           backgroundImage: "url(assets/images/about-background.svg)",
         }}

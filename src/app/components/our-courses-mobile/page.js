@@ -17,28 +17,28 @@ export default function OurCoursesMobile() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 lg:hidden">
         <div className="flex flex-col items-center">
           <div>
-            <img src="assets\images\teacher-training.svg" alt="" />
+            <img src="assets\images\teacher-training.svg" alt="Teacher Training"/>
           </div>
           <div className="-mt-8 text-xl">Teacher Training</div>
         </div>
 
         <div className="flex flex-col items-center">
           <div>
-            <img src="assets\images\abacus.svg" alt="" />
+            <img src="assets\images\abacus.svg" alt="Abacus" />
           </div>
           <div className="-mt-8 text-xl">Abacus</div>
         </div>
 
         <div className="flex flex-col items-center">
           <div>
-            <img src="assets\images\mid-brain-activation.svg" alt="" />
+            <img src="assets\images\mid-brain-activation.svg" alt="Mid Brain Activation" />
           </div>
           <div className="-mt-8 text-xl">Mid Brain Activation</div>
         </div>
 
         <div className="flex flex-col items-center">
           <div>
-            <img src="assets\images\hand-writing.svg" alt="" />
+            <img src="assets\images\hand-writing.svg" alt="Hand Writing" />
           </div>
           <div className="-mt-8 text-xl">Hand Writing</div>
         </div>
