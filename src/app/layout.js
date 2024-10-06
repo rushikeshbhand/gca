@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header/page.js";
+import Footer from "./components/footer/page.js";
 
 const gilroySemiBold = localFont({
   src: "../../public/fonts/Gilroy-SemiBold.ttf",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={`${gilroySemiBold.variable} antialiased`}>
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
