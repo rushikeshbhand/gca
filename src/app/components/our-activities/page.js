@@ -130,7 +130,7 @@ export default function OurActivities() {
               onClick={() => setSelectedTab("youtube")}
               className={`cursor-pointer ${
                 selectedTab === "youtube"
-                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] py-1 px-11 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
+                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] py-1 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
                   : "max-w-[15vw] px-11 text-center"
               }`}
             >
