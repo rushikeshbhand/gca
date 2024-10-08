@@ -9,7 +9,7 @@ export default function About() {
           backgroundImage: "url(assets/images/about-background.svg)",
         }}
       >
-        <div className="container flex flex-col md:flex-row gap-4 md:gap-11 mt-10 md:mt-24 p-4">
+        <div className="container flex flex-col md:flex-row gap-4 md:gap-11 mt-10 md:mt-16 p-4">
           <div className="w-full md:w-[50%] flex justify-center">
             <img
               src="assets/images/about.png"

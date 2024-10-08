@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GetInTouch() {
   return (
-    <section className="max-w-3xl mx-auto py-10 px-5">
+    <section className="max-w-3xl mx-auto py-10 px-5 my-7">
       {/* Title */}
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-800">Get in Touch</h2>
