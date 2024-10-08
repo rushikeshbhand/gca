@@ -2,10 +2,10 @@ import React from "react";
 
 export default function GetInTouch() {
   return (
-    <section className="max-w-3xl mx-auto py-10 px-5 my-7">
+    <section className="max-w-3xl mx-auto py-10 px-5 my-7 text-[#4F4D74]">
       {/* Title */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-800">Get in Touch</h2>
+        <h2 className="text-4xl lg:text-5xl">Get in Touch</h2>
       </div>
 
       {/* Info Cards */}

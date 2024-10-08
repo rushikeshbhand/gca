@@ -5,7 +5,7 @@ export default function OurCoursesMobile() {
     <div className="my-20 text-[#4F4D74]">
       {/* common code  */}
       <div className="text-center mx-auto max-w-[80vw]">
-        <h2 className="text-2xl md:text-3xl lg:text-5xl">Our Courses</h2>
+        <h2 className="text-4xl lg:text-5xl">Our Courses</h2>
         <p>
           We offer precisely what you seek for your child - training programs,
           mathematical skills, memory retention, and holistic personal
@@ -19,7 +19,7 @@ export default function OurCoursesMobile() {
           <div>
             <img src="assets\images\teacher-training.svg" alt="Teacher Training"/>
           </div>
-          <div className="-mt-8 text-xl">Teacher Training</div>
+          <div className="-mt-8 text-xl lg:text-3xl">Teacher Training</div>
         </div>
 
         <div className="flex flex-col items-center">

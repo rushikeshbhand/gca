@@ -4,7 +4,7 @@ import "./contact-us-form.css"
 export default function ContactUsForm() {
   return (
     // Container for the form
-    <div className="max-w-3xl mx-auto mt-10 p-5">
+    <div className="max-w-3xl mx-auto mt-10 p-5 text-[#4F4D74]">
       {/* Form Fields */}
       <form className="p-4 space-y-6">
         {/* Name Field */}
@@ -21,7 +21,7 @@ export default function ContactUsForm() {
 
         {/* Contact Number 1 */}
         <div>
-          <label htmlFor="contact1" className="block text-sm font-medium text-gray-700">Contact Number</label>
+          <label htmlFor="contact1" className="block text-sm font-medium">Contact Number</label>
           <input
             type="tel"
             id="contact1"
@@ -33,7 +33,7 @@ export default function ContactUsForm() {
 
         {/* Contact Number 2 */}
         <div>
-          <label htmlFor="contact2" className="block text-sm font-medium text-gray-700">Contact Number (Optional)</label>
+          <label htmlFor="contact2" className="block text-sm font-medium">Contact Number (Optional)</label>
           <input
             type="tel"
             id="contact2"
@@ -44,7 +44,7 @@ export default function ContactUsForm() {
 
         {/* Message Field */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium">Message</label>
           <textarea
             id="message"
             rows="4"

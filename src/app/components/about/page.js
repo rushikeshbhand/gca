@@ -31,7 +31,7 @@ export default function About() {
               </div>
 
               <div className="flex flex-col gap-4">
-                <h1 className="flex justify-start text-2xl md:text-3xl lg:text-6xl font-extrabold text-center md:text-left">
+                <h1 className="flex justify-start text-4xl lg:text-5xl text-center md:text-left">
                   Who we are?
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg whitespace-wrap lg:max-w-[40vw]">
