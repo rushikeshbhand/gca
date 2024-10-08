@@ -14,7 +14,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="max-w-2xl mx-auto mt-10 mb-36">
+    <section className="max-w-[92vw] lg:max-w-[55vw] mx-auto mt-10 mb-36">
       {/* FAQ Items */}
       <div className="space-y-4">
         {faqData.map((item, index) => (
@@ -35,11 +35,6 @@ const Faq = () => {
                   alt="Rectangle"
                   className="w-24 h-auto bg-white rounded-full p-2"
                 />
-                {/* <img
-                  src="../assets/images/white-bg-circle.svg"
-                  alt="Vector"
-                  className="absolute top-0 left-0 right-0 bottom-0 m-auto w-4 h-auto"
-                /> */}
               </span>
             </div>
 
