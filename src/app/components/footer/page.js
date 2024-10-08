@@ -6,8 +6,8 @@ import "./footer.css";
 export default function Footer() {
   return (
     <footer className="mt-10">
-      <div className="top-footer bg-[#6173FD] max-w-[100vw] mt-10 min-w-[100vw] text-white">
-        <div className="max-w-[50vw] ms-3 md:ms-36 pt-11">
+      <div className="top-footer bg-[#6173FD] max-w-[100vw] mt-10 text-white">
+        <div className="max-w-[60vw] ms-3 md:ps-36 pt-11">
           <div className="flex flex-row justify-between items-center py-6">
             <div className="bg-white p-2 rounded-md">
               <Image
@@ -94,7 +94,7 @@ export default function Footer() {
           />
         </div>
       </div>
-      <div className="bottom-footer bg-[#5161E8] text-white max-w-[90vw] min-w-[100vw] py-7">
+      <div className="bottom-footer bg-[#5161E8] text-white max-w-[100vw]  py-7">
         <div className="max-w-[50vw] ms-3 md:ms-36 flex gap-3 md:gap-0 flex-col-reverse md:flex-row md:justify-between">
           <p>2023 All Rights Reserved</p>
           <Link href="#">Privacy Policy</Link>
