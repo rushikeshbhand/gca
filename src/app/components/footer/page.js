@@ -19,6 +19,7 @@ export default function Footer() {
               />
             </div>
 
+            {/* social media links for desktop */}
             <div className="social-media md:flex flex-row hidden ">
               <Link href="https://www.facebook.com/geniuschampsacademy">
                 <Image
@@ -28,7 +29,7 @@ export default function Footer() {
                   height={80}
                 />
               </Link>
-              <Link href="https://www.instagram.com/genius_champs_academy/">
+              <Link href="https://www.instagram.com/genius_champs_academy/" className="-mx-6">
                 <Image
                   src="/assets/images/instagram.svg"
                   alt="instagram"
@@ -36,7 +37,7 @@ export default function Footer() {
                   height={80}
                 />
               </Link>
-              <Link href="https://www.linkedin.com/company/genius-champs-academy">
+              <Link href="https://www.linkedin.com/company/genius-champs-academy" className="-me-6">
                 <Image
                   src="/assets/images/linkedin.svg"
                   alt="linkedin"
@@ -74,6 +75,42 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* social media links for mobile devices  */}
+          <div className="social-media -ms-5 flex flex-row md:hidden ">
+              <Link href="https://www.facebook.com/geniuschampsacademy">
+                <Image
+                  src="/assets/images/facebook.svg"
+                  alt="facebook"
+                  width={80}
+                  height={80}
+                />
+              </Link>
+              <Link href="https://www.instagram.com/genius_champs_academy/" className="-mx-5">
+                <Image
+                  src="/assets/images/instagram.svg"
+                  alt="instagram"
+                  width={80}
+                  height={80}
+                />
+              </Link>
+              <Link href="https://www.linkedin.com/company/genius-champs-academy" className="-me-5">
+                <Image
+                  src="/assets/images/linkedin.svg"
+                  alt="linkedin"
+                  width={80}
+                  height={80}
+                />
+              </Link>
+              <Link href="https://youtube.com/@geniuschampsacademy">
+                <Image
+                  src="/assets/images/youtube.svg"
+                  alt="youtube"
+                  width={80}
+                  height={80}
+                />
+              </Link>
+            </div>
 
           <div className="contact-data flex md:flex-row flex-col justify-end gap-2 md:gap-14 py-8">
             <Link href="tel:+1234567890">
