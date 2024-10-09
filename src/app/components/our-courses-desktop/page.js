@@ -53,7 +53,7 @@ export default function OurCoursesDesktop() {
         {courses.map((course, index) => (
           <div
             key={index}
-            className={`flex flex-col p-4  text-center transition-all duration-300 ease-in-out ${
+            className={`flex flex-col -mt-7 p-4  text-center transition-all duration-300 ease-in-out ${
               activeSlide === index ? "scale-150" : "scale-110"
             }`}
           >
@@ -79,7 +79,7 @@ export default function OurCoursesDesktop() {
         ))}
       </Slider>
 
-      <div className="flex flex-row justify-center gap-7 -mt-8">
+      <div className="flex flex-row justify-center gap-7 -mt-14">
         {/* Left Arrow */}
         <button className="previous drop-shadow-2xl p-3 bg-white rounded-full" onClick={() => document.querySelector(".slick-prev").click()}>
           <IoIosArrowBack size={24} />

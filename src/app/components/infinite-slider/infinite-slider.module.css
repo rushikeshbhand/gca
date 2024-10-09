@@ -9,7 +9,7 @@
 }
 
 .slider-text {
-  animation: scroll 15s linear infinite; /* Adjust the speed for smooth scrolling */
+  animation: scroll 30s linear infinite; /* Adjust the speed for smooth scrolling */
 }
 
 /* Shadow effect on both ends */
