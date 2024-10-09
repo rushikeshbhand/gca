@@ -1,0 +1,28 @@
+.our-courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .course-info {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .flex {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .our-courses-container h2 {
+    color: #4f4d74;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #13a8c4;
+  }
+  

@@ -8,7 +8,7 @@ export default function OurCoursesMobile() {
         <h2 className="text-4xl lg:text-5xl">Our Courses</h2>
         <p>
           We offer precisely what you seek for your child - training programs,
-          mathematical skills, memory retention, and holistic personal
+          mathematical skills, <br/> memory retention, and holistic personal
           development
         </p>
       </div>

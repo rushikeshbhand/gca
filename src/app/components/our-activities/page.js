@@ -19,10 +19,10 @@ export default function OurActivities() {
               src="https://www.youtube.com/embed/ERCMXc8x7mc?si=NGIcwHTC1xUd1PNi"
               title="YouTube video player"
               className="rounded-xl border-8 border-[white] drop-shadow-2xl"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         );
@@ -37,8 +37,8 @@ export default function OurActivities() {
               className="rounded-xl border-8 border-[white] drop-shadow-2xl"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         );
@@ -53,8 +53,8 @@ export default function OurActivities() {
               className="rounded-xl border-8 border-[white] drop-shadow-2xl"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         );
@@ -69,8 +69,8 @@ export default function OurActivities() {
               className="rounded-xl border-8 border-[white] drop-shadow-2xl"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         );
@@ -85,8 +85,8 @@ export default function OurActivities() {
               className="rounded-xl border-8 border-[white] drop-shadow-2xl"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         );
@@ -101,8 +101,8 @@ export default function OurActivities() {
               className="rounded-xl border-8 border-[white] drop-shadow-2xl"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         );

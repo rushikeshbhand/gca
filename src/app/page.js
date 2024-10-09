@@ -5,6 +5,7 @@ import Achievements from "./components/achievements/page";
 import About from "./components/about/page";
 import SuccessRate from "./components/success-rate/page";
 import OurCoursesMobile from "./components/our-courses-mobile/page";
+import OurCoursesLaptop from "./components/our-courses-laptop/page";
 import OurCoursesDesktop from "./components/our-courses-desktop/page";
 import InfiniteSlider from "./components/infinite-slider/page";
 import JoinUsNow from "./components/join-us-now/page";
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <SuccessRate />
       <OurCoursesMobile />
+      {/* <OurCoursesLaptop/> */}
       <OurCoursesDesktop />
       <InfiniteSlider />
       <JoinUsNow />
