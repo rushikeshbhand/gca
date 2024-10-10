@@ -60,7 +60,7 @@ export default function OurCoursesDesktop() {
             <img
               src={course.icon}
               alt={course.title}
-              className="pl-14 xl:pl-20 -mb-10 w-64 h-64 flex justify-center "
+              className="pl-14 xl:pl-24 3xl:pl-48 -mb-10 w-64 h-64 flex justify-center "
             />
 
             <p className="text-base -mt-14 font-bold text-center">{course.title}</p>
