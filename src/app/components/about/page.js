@@ -1,13 +1,15 @@
 import React from "react";
+// import aboutBackground from "/assets/images/about-background.svg";
 
 export default function About() {
   return (
     <div>
       <div
-        className="min-h-[96vh] bg-no-repeat flex md:pb-[5rem]"
+        className="min-h-[96vh] bg-no-repeat flex md:pb-[5rem] bg-center mt-16"
         style={{
-          backgroundImage: "url(assets/images/about-background.svg)",
+          backgroundImage: "url('/assets/images/about-background.svg')",
         }}
+
       >
         <div className="container flex flex-col md:flex-row gap-4 md:gap-11 mt-10 md:mt-16 p-4">
           <div className="w-full md:w-[50%] flex justify-center">

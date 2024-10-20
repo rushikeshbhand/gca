@@ -7,7 +7,7 @@ import Faq from '../faq/page'
 export default function ContactUs() {
   return (
     <div>
-        {/* <DemoClass /> */}
+        <DemoClass />
         <ContactUsForm/>
         <GetInTouch/>
         <Faq/>
