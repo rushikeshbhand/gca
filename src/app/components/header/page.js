@@ -36,7 +36,7 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="flex gap-12 sm:gap-52 text-[#4F4D74] items-center w-full p-4 lg:px-20 justify-center">
+    <header className="flex gap-12 sm:gap-40 text-[#4F4D74] items-center w-full p-4 lg:px-20 justify-between lg:justify-center">
       <div className="flex items-center gap-4">
         <Link href="/">
           <Image
