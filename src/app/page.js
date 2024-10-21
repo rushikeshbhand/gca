@@ -9,6 +9,8 @@ import OurCoursesDesktop from "./components/our-courses-desktop/page";
 import InfiniteSlider from "./components/infinite-slider/page";
 import JoinUsNow from "./components/join-us-now/page";
 import OurActivities from "./components/our-activities/page";
+import Reviews from "./components/reviews/page";
+import DemoClassForLandingPage from "./components/demo-class-for-landing-page/page";
 export default function Home() {
   return (
     <div>
@@ -21,6 +23,8 @@ export default function Home() {
       <InfiniteSlider />
       <JoinUsNow />
       <OurActivities />
+      <DemoClassForLandingPage/>
+      <Reviews/>
     </div>
   );
 }

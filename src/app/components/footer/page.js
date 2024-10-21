@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="mt-10">
       <div className="top-footer bg-[#6173FD] max-w-[100vw] mt-10 text-white">
-        <div className="max-w-[60vw] ms-3 md:ps-36 pt-11">
+        <div className="max-w-[60vw] ms-3 md:ps-36 pt-20">
           <div className="flex flex-row justify-between items-center py-6">
             <div className="bg-white p-2 rounded-md">
               <Image

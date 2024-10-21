@@ -79,7 +79,7 @@ export default function OurCoursesDesktop() {
         ))}
       </Slider>
 
-      <div className="flex flex-row justify-center gap-7 -mt-[70px]">
+      <div className="flex flex-row justify-center gap-7 -mt-[25px] lx:-mt-[60px]">
         {/* Left Arrow */}
         <button className="previous drop-shadow-2xl p-3 bg-white rounded-full" onClick={() => document.querySelector(".slick-prev").click()}>
           <IoIosArrowBack size={24} />
