@@ -33,11 +33,11 @@ export default function ContactUsForm() {
 
         {/* Contact Number 2 */}
         <div>
-          <label htmlFor="contact2" className="block text-sm font-medium">Contact Number (Optional)</label>
+          <label htmlFor="contact2" className="block text-sm font-medium">Email</label>
           <input
-            type="tel"
+            type="email"
             id="contact2"
-            placeholder="+000 0000 000"
+            placeholder="Enter Email Here"
             className="remove-outline  mt-1 p-4 block w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
           />
         </div>
