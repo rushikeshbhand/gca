@@ -18,12 +18,12 @@ export default function JoinUsNow() {
           </div>
 
           <div className="flex flex-col gap-4 pb-10 px-4">
-            <h1 className="text-3xl font-extrabold">Book a Franchise</h1>
-            <p>
+            <h1 className="text-3xl text-center lg:text-justify font-extrabold">Book a Franchise</h1>
+            <p className="text-center lg:text-justify">
               Begin your teaching venture now, own your <br /> franchise and
               earn right from your doorstep.
             </p>
-            <button className="px-10 py-3 bg-white text-[#6072FA] rounded-3xl border-4 border-[#e3e3e6] w-[180px]">
+            <button className="px-10 py-3 mx-auto lg:mx-0 bg-white text-[#6072FA] rounded-3xl border-4 border-[#e3e3e6] w-[180px]">
               Book Now
             </button>
           </div>
