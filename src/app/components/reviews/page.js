@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Reviews() {
   return (
-    <div className="flex flex-row relative top-28 m-auto ps-5 py-8 max-h-[12rem] sm:max-h-[15rem] rounded-2xl border-8 border-white items-start gap-4 -my-6 sm:my-0 max-w-[90vw] sm:max-w-[80vw] lg:max-w-[60vw] bg-[#FF7A73] text-white">
+    <div className="flex flex-row relative top-20 sm:top-28 m-auto ps-5 py-8 max-h-[12rem] sm:max-h-[15rem] rounded-2xl border-8 border-white items-start gap-4 -my-6 sm:my-0 max-w-[90vw] sm:max-w-[80vw] lg:max-w-[60vw] bg-[#FF7A73] text-white">
       {/* <div className="w-40 h-40 bg-[#FFCD1A] rounded-full border-8 border-emerald-50"></div> */}
       <div className="w-[12rem] h-[7rem] flex items-center justify-center">
         <img src="/assets/images/review-background-circle.svg" alt="yellow background" className=""/>
