@@ -53,7 +53,7 @@ export default function OurCoursesDesktop() {
         {courses.map((course, index) => (
           <div
             key={index}
-            className={`flex flex-col -mt-7 p-4  text-center transition-all duration-300 ease-in-out ${
+            className={`flex flex-col mt-9 lg:-mt-3 p-4  text-center transition-all duration-300 ease-in-out ${
               activeSlide === index ? "scale-150" : "scale-110"
             }`}
           >

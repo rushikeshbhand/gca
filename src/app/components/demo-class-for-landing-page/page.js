@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function DemoClassForLandingPage() {
   return (
-    <div className='flex justify-center flex-col items-center mt-6'>
+    <div className='flex justify-center flex-col items-center mt-20'>
         {/* <div className='text-center'>
             <h1 className='text-4xl lg:text-5xl text-[#4F4D74] px-6'>What are you looking for!</h1>
         </div> */}

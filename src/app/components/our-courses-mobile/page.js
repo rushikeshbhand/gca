@@ -4,8 +4,8 @@ export default function OurCoursesMobile() {
   return (
     <div className="my-20 text-[#4F4D74]">
       {/* common code  */}
-      <div className="text-center mx-auto max-w-[80vw]">
-        <h2 className="text-4xl lg:text-5xl">Our Courses</h2>
+      <div className="text-center lg:max-h-[30px] mx-auto max-w-[80vw]">
+        <h2 className="mb-3 text-4xl lg:text-5xl">Our Courses</h2>
         <p>
           We offer precisely what you seek for your child - training programs,
           mathematical skills, <br/> memory retention, and holistic personal

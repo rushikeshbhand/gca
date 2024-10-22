@@ -14,7 +14,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="max-w-[92vw] lg:max-w-[55vw] mx-auto mt-10 mb-36">
+    <section className="max-w-[92vw] lg:max-w-[55vw] mx-auto mt-10 mb-0">
       {/* FAQ Items */}
       <div className="space-y-4">
         {faqData.map((item, index) => (
