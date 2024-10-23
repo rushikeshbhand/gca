@@ -3,37 +3,29 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "./contact-us-form.css";
+import axios from 'axios';
 
 export default function ContactUsForm() {
-  
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // Show a success toast when form is submitted
-    toast.success('Form submitted successfully!', {
-      position: "top-right",
-      autoClose: 3000, // toast will auto-close after 3 seconds
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-    
-    // Reset the form fields after successful submission
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/contact', data);
+      if (response.data.success) {
+        toast.success('Form submitted successfully!', { position: "top-right", autoClose: 3000 });
+        reset(); // Reset the form fields
+      }
+    } catch (error) {
+      toast.error('Failed to submit the form', { position: "top-right", autoClose: 3000 });
+    }
   };
 
   return (
     <div className="max-w-3xl mx-auto mt-10 p-5 text-[#4F4D74]">
-      {/* Toast container for showing toast messages */}
       <ToastContainer />
-
       <form className="p-4 space-y-6" onSubmit={handleSubmit(onSubmit)}>
-        {/* Name Field */}
-        <div>
+         {/* Name Field */}
+         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
           <input
             type="text"
@@ -95,13 +87,9 @@ export default function ContactUsForm() {
             {...register('message')}
           ></textarea>
         </div>
-
-        {/* Submit Button */}
+        
         <div className="flex justify-center">
-          <button
-            type="submit"
-            className="bg-[#6173FD] text-white font-bold py-3 px-4 w-full rounded-full hover:bg-[#707ff3] transition-all duration-200 border-2 border-blue-500"
-          >
+          <button type="submit" className="bg-[#6173FD] text-white font-bold py-3 px-4 w-full rounded-full">
             Contact Us
           </button>
         </div>
