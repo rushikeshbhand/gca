@@ -125,7 +125,7 @@ export default function Footer() {
           <Image
             src="/assets/images/footer-boy.svg"
             alt="footer-boy"
-            className="md:w-48 absolute right-5 lg:right-44 -bottom-24 md:-bottom-20 lg:-bottom-16"
+            className="w-44 sm:w-48 absolute right-5 lg:right-44 -bottom-24 md:-bottom-20 lg:-bottom-16"
             width={192}
             height={250}
           />
