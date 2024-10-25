@@ -5,6 +5,7 @@ export default function DemoClass() {
   return (
     <div className='flex justify-center flex-col items-center mt-6'>
         <div className='text-center'>
+            <p className='text-xl text-[#A7B0B8]'>Contact Us</p>
             <h1 className='text-4xl lg:text-5xl text-[#4F4D74] px-6'>What are you looking for!</h1>
         </div>
         <div className='flex flex-row items-center justify-between bg-[#EDD93C] max-w-[85vw] sm:max-w-[90vw] sm:min-w-[90vw] lg:min-w-[65vw] lg:max-w-[65vw] px-4 py-4 sm:px-12 sm:py-8 mt-6 rounded-3xl '> 
