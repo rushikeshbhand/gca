@@ -110,7 +110,7 @@ export default function ContactUsForm() {
             type="button"
             id="dropdownToggle"
             onClick={toggleDropdown}
-            className="px-5 py-2.5 text-[#A9BFCC] text-sm bg-white hover:bg-gray-50 flex justify-between items-center mt-1 remove-outline p-4 w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
+            className="px-5 py-4 text-[#A9BFCC] text-sm bg-white hover:bg-gray-50 flex justify-between items-center mt-1 remove-outline p-4 w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
           >
             <span>{selectedService.current}</span>
             <svg
