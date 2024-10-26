@@ -1,27 +1,48 @@
 'use client';
-import React, { useState } from 'react'; // Import useState
+import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import './contact-us-form.css';
 
 export default function ContactUsForm() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
-  const [loading, setLoading] = useState(false); // Initialize loading state
+  const [loading, setLoading] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const selectedService = useRef("Select a service");
+
+  // Handle dropdown toggle
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  // Close dropdown when clicking outside
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setDropdownOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const onSubmit = async (data) => {
-    setLoading(true); // Set loading to true when form is submitted
+    setLoading(true);
+    data.service = selectedService.current; // Add the selected service to form data
     try {
       console.log(data);
       const response = await axios.post('http://localhost:5000/api/contact', data);
       if (response.data.success) {
         toast.success('Form submitted successfully!', { position: "top-right", autoClose: 3000 });
-        reset(); // Reset the form fields
+        reset();
+        selectedService.current = "Select a service"; // Reset dropdown
       }
     } catch (error) {
       toast.error('Failed to submit the form', { position: "top-right", autoClose: 3000 });
     } finally {
-      setLoading(false); // Reset loading state after request is complete
+      setLoading(false);
     }
   };
 
@@ -31,7 +52,7 @@ export default function ContactUsForm() {
       <form className="p-4 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         {/* Name Field */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name <span className='star'>*</span></label>
           <input
             type="text"
             id="name"
@@ -44,7 +65,7 @@ export default function ContactUsForm() {
 
         {/* Contact Number Field */}
         <div>
-          <label htmlFor="contact" className="block text-sm font-medium">Contact Number</label>
+          <label htmlFor="contact" className="block text-sm font-medium">Contact Number<span className='star'>*</span></label>
           <input
             type="tel"
             id="contact"
@@ -63,7 +84,7 @@ export default function ContactUsForm() {
 
         {/* Email Field */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium">Email<span className='star'>*</span></label>
           <input
             type="email"
             id="email"
@@ -80,6 +101,53 @@ export default function ContactUsForm() {
           {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
         </div>
 
+        {/* Services Dropdown */}
+        <div ref={dropdownRef} className="relative font-[sans-serif]">
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700">
+            Service<span className="text-red-500">*</span>
+          </label>
+          <button
+            type="button"
+            id="dropdownToggle"
+            onClick={toggleDropdown}
+            className="px-5 py-2.5 text-[#A9BFCC] text-sm bg-white hover:bg-gray-50 flex justify-between items-center mt-1 remove-outline p-4 w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
+          >
+            <span>{selectedService.current}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-3 fill-gray-500"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          
+          {dropdownOpen && (
+            <ul
+              className="absolute shadow-lg bg-white py-2 z-[1000] w-full divide-y max-h-40 overflow-auto mt-1"
+              role="listbox"
+            >
+              {["First Class", "Second Class", "Third Class"].map((service) => (
+                <li
+                  key={service}
+                  className="py-3 px-5 hover:bg-gray-50 text-gray-800 text-sm cursor-pointer"
+                  onClick={() => {
+                    selectedService.current = service;
+                    setDropdownOpen(false);
+                  }}
+                >
+                  {service}
+                </li>
+              ))}
+            </ul>
+          )}
+          {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>}
+        </div>
+
         {/* Message Field (optional) */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium">Message</label>
@@ -93,13 +161,14 @@ export default function ContactUsForm() {
           ></textarea>
         </div>
 
+        {/* Submit Button */}
         <div className="flex justify-center">
           <button 
             type="submit" 
             className={`bg-[#6173FD] text-white font-bold py-3 px-4 w-full rounded-full ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-            disabled={loading} // Disable button while loading
+            disabled={loading}
           >
-            {loading ? 'Submitting...' : 'Contact Us'} {/* Change button text based on loading state */}
+            {loading ? 'Submitting...' : 'Contact Us'}
           </button>
         </div>
       </form>
