@@ -52,7 +52,7 @@ export default function ContactUsForm() {
       <form className="p-4 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         {/* Name Field */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name <span className='star'>*</span></label>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 ">Name <span className='star'>*</span></label>
           <input
             type="text"
             id="name"
@@ -102,9 +102,9 @@ export default function ContactUsForm() {
         </div>
 
         {/* Services Dropdown */}
-        <div ref={dropdownRef} className="relative font-[sans-serif]">
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700">
-            Service<span className="text-red-500">*</span>
+        <div ref={dropdownRef} className="relative">
+          <label htmlFor="service" className="block text-sm font-medium text-gray-700 service">
+            Service<span className='star'>*</span>
           </label>
           <button
             type="button"
