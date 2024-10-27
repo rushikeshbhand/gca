@@ -58,29 +58,44 @@ const Faq = () => {
 
 const faqData = [
   {
-    question: 'Many desktop publishing packages?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: "What cool stuff can I learn here?",
+    answer: "You can dive into Abacus, Midbrain Activation, Vedic Maths, memory techniques, and lots more exciting skills to master.",
   },
   {
-    question: 'Many desktop publishing packages?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: "Who can enroll in your courses?",
+    answer: "Our courses are suitable for students, educators, parents, and anyone interested in personal or professional development.",
   },
   {
-    question: 'Many desktop publishing packages?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: "How do I book a demo class?",
+    answer: "Simply fill out the form on our website, and we'll schedule your free session. Or contact us directly via phone or email.",
   },
   {
-    question: 'Many desktop publishing packages?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: "Do you offer franchise opportunities?",
+    answer: "Yes, we provide comprehensive support for franchisees interested in starting their own classes.",
   },
   {
-    question: 'Many desktop publishing packages?',
-    answer:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+    question: "How can I join your team as a teacher?",
+    answer: "Book a Demo Session and send us your qualifications details.",
+  },
+  {
+    question: "What sets Genius Champs Academy apart?",
+    answer: "We prioritize personalized learning, innovative teaching methods, and a supportive environment.",
+  },
+  {
+    question: "How can I contact customer support?",
+    answer: "Reach us via phone, email, or our website's contact form.",
+  },
+  {
+    question: "Are both online and offline courses available?",
+    answer: "Yes! Choose between virtual or in-person classes based on your preference and schedule.",
+  },
+  {
+    question: "Do you have any secret tips for becoming a super smart kid?",
+    answer: "Oh, we've got plenty! Our courses are full of secrets and surprises that will make you feel like a genius in no time.",
+  },
+  {
+    question: "How do I snag a spot in the fun zone?",
+    answer: "Piece of cake! Just hit up our online form, and we'll slide you into a demo session. Or hit us with a DM or email – we're always ready to chat!",
   },
 ];
 
