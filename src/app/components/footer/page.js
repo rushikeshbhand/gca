@@ -113,11 +113,11 @@ export default function Footer() {
             </div>
 
           <div className="contact-data flex md:flex-row flex-col justify-end gap-2 md:gap-14 py-8">
-            <Link href="tel:+1234567890">
-              <p>+1234567890</p>
+            <Link href="tel:9423631238">
+              <p>+91 9423631238</p>
             </Link>
-            <Link href="mailto:dummymail@gmail.com">
-              <p>dummymail@gmail.com</p>
+            <Link href="mailto:geniuschampsacademy@gmail.com">
+              <p>geniuschampsacademy@gmail.com</p>
             </Link>
           </div>
         </div>
