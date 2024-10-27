@@ -1,13 +1,18 @@
-'use client';
-import React, { useState, useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
-import './contact-us-form.css';
+"use client";
+import React, { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import "./contact-us-form.css";
 
 export default function ContactUsForm() {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const [loading, setLoading] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -33,14 +38,23 @@ export default function ContactUsForm() {
     data.service = selectedService.current; // Add the selected service to form data
     try {
       console.log(data);
-      const response = await axios.post('http://localhost:5000/api/contact', data);
+      const response = await axios.post(
+        "http://localhost:5000/api/contact",
+        data
+      );
       if (response.data.success) {
-        toast.success('Form submitted successfully!', { position: "top-right", autoClose: 3000 });
+        toast.success("Form submitted successfully!", {
+          position: "top-right",
+          autoClose: 3000,
+        });
         reset();
         selectedService.current = "Select a service"; // Reset dropdown
       }
     } catch (error) {
-      toast.error('Failed to submit the form', { position: "top-right", autoClose: 3000 });
+      toast.error("Failed to submit the form", {
+        position: "top-right",
+        autoClose: 3000,
+      });
     } finally {
       setLoading(false);
     }
@@ -52,59 +66,79 @@ export default function ContactUsForm() {
       <form className="p-4 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         {/* Name Field */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 ">Name <span className='star'>*</span></label>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 "
+          >
+            Name <span className="star">*</span>
+          </label>
           <input
             type="text"
             id="name"
             placeholder="Enter your name"
             className="remove-outline mt-1 p-4 block w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
-            {...register('name', { required: 'Name is required' })}
+            {...register("name", { required: "Name is required" })}
           />
-          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+          )}
         </div>
 
         {/* Contact Number Field */}
         <div>
-          <label htmlFor="contact" className="block text-sm font-medium">Contact Number<span className='star'>*</span></label>
+          <label htmlFor="contact" className="block text-sm font-medium">
+            Contact Number<span className="star">*</span>
+          </label>
           <input
             type="tel"
             id="contact"
             placeholder="Enter your contact number"
             className="remove-outline mt-1 p-4 block w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
-            {...register('contact', {
-              required: 'Contact number is required',
+            {...register("contact", {
+              required: "Contact number is required",
               pattern: {
                 value: /^[0-9]{10}$/,
-                message: 'Enter a valid 10-digit contact number',
+                message: "Enter a valid 10-digit contact number",
               },
             })}
           />
-          {errors.contact && <p className="text-red-500 text-sm mt-1">{errors.contact.message}</p>}
+          {errors.contact && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.contact.message}
+            </p>
+          )}
         </div>
 
         {/* Email Field */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium">Email<span className='star'>*</span></label>
+          <label htmlFor="email" className="block text-sm font-medium">
+            Email<span className="star">*</span>
+          </label>
           <input
             type="email"
             id="email"
             placeholder="Enter your email address"
             className="remove-outline mt-1 p-4 block w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
-            {...register('email', {
-              required: 'Email is required',
+            {...register("email", {
+              required: "Email is required",
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                message: 'Enter a valid email',
+                message: "Enter a valid email",
               },
             })}
           />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
         </div>
 
         {/* Services Dropdown */}
         <div ref={dropdownRef} className="relative">
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700 service">
-            Service<span className='star'>*</span>
+          <label
+            htmlFor="service"
+            className="block text-sm font-medium text-gray-700 service"
+          >
+            Service<span className="star">*</span>
           </label>
           <button
             type="button"
@@ -125,13 +159,21 @@ export default function ContactUsForm() {
               />
             </svg>
           </button>
-          
+
           {dropdownOpen && (
             <ul
               className="absolute shadow-lg bg-white py-2 z-[1000] w-full divide-y max-h-40 overflow-auto mt-1"
               role="listbox"
             >
-              {["First Class", "Second Class", "Third Class"].map((service) => (
+              {[
+                "Abacus Classes",
+                "Vedic Maths Classes",
+                "Memory Techniques Workshop",
+                "Midbrain Activation Workshop",
+                "Handwriting Improvement Workshop",
+                "Abacus: Teacher Training Program",
+                "Vedic Maths: Teacher Training Program",
+              ].map((service) => (
                 <li
                   key={service}
                   className="py-3 px-5 hover:bg-gray-50 text-gray-800 text-sm cursor-pointer"
@@ -145,30 +187,38 @@ export default function ContactUsForm() {
               ))}
             </ul>
           )}
-          {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>}
+          {errors.service && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.service.message}
+            </p>
+          )}
         </div>
 
         {/* Message Field (optional) */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium">
+            Message
+          </label>
           <textarea
             id="message"
             rows="4"
             placeholder="Enter your message"
             className="remove-outline mt-1 p-4 block w-full rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-blue-500 transition duration-150 ease-in-out sm:text-sm"
-            style={{ resize: 'none' }}
-            {...register('message')}
+            style={{ resize: "none" }}
+            {...register("message")}
           ></textarea>
         </div>
 
         {/* Submit Button */}
         <div className="flex justify-center">
-          <button 
-            type="submit" 
-            className={`bg-[#6173FD] text-white font-bold py-3 px-4 w-full rounded-full ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+          <button
+            type="submit"
+            className={`bg-[#6173FD] text-white font-bold py-3 px-4 w-full rounded-full ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
             disabled={loading}
           >
-            {loading ? 'Submitting...' : 'Contact Us'}
+            {loading ? "Submitting..." : "Contact Us"}
           </button>
         </div>
       </form>
