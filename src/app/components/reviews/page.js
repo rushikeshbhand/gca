@@ -76,14 +76,14 @@ export default function Reviews() {
             key={index}
             className="flex flex-row items-center gap-6 w-full p-4"
           >
-            <div className="w-36 h-36 bg-[#FFCD1A] rounded-full border-4 border-white flex-shrink-0 overflow-hidden mx-auto">
+            <div className="md:float-left w-36 h-36 bg-[#FFCD1A] rounded-full border-4 border-white flex-shrink-0 overflow-hidden mx-auto">
               <img
                 src={review.avatar}
                 alt="avatar"
                 className="w-full h-full p-1 object-cover"
               />
             </div>
-            <div className="flex flex-col flex-1 items-center ">
+            <div className="flex flex-col flex-1 items-center">
               {" "}
               {/* Flex-1 for content */}
               <div className="flex gap-4 items-center mx-auto">
