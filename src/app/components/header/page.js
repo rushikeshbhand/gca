@@ -24,7 +24,11 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+      if (
+        isMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -53,11 +57,20 @@ export default function Header() {
       <nav className="hidden lg:flex flex-row items-center gap-4">
         <ul className="flex gap-3 list-none items-center text-lg">
           <li>
-            <Link href="/" className={getLinkStyle("Home")} onClick={() => handleNavClick("Home")}>
+            <Link
+              href="/"
+              className={getLinkStyle("Home")}
+              onClick={() => handleNavClick("Home")}
+            >
               Home
             </Link>
           </li>
-          <Image src="/assets/images/list-style.png" alt="separator" width={6} height={6} />
+          <Image
+            src="/assets/images/list-style.png"
+            alt="separator"
+            width={6}
+            height={6}
+          />
           <li>
             <Link
               href="/components/contact-us"
@@ -67,7 +80,12 @@ export default function Header() {
               Our Courses
             </Link>
           </li>
-          <Image src="/assets/images/list-style.png" alt="separator" width={6} height={6} />
+          <Image
+            src="/assets/images/list-style.png"
+            alt="separator"
+            width={6}
+            height={6}
+          />
           <li>
             <Link
               href="/components/exam-portal"
@@ -77,10 +95,15 @@ export default function Header() {
               Exam Portal
             </Link>
           </li>
-          <Image src="/assets/images/list-style.png" alt="separator" width={6} height={6} />
+          <Image
+            src="/assets/images/list-style.png"
+            alt="separator"
+            width={6}
+            height={6}
+          />
           <li>
             <Link
-              href="/components/join-our-team"
+              href="/components/contact-us"
               className={getLinkStyle("Join Our Team")}
               onClick={() => handleNavClick("Join Our Team")}
             >
@@ -90,14 +113,16 @@ export default function Header() {
         </ul>
 
         <button className="bg-[#6173FD] text-white px-7 py-2 rounded-3xl ms-8 ring ring-[#E2EBF4]">
-          BOOK FREE DEMO
+          <Link href="/components/contact-us">BOOK FREE DEMO</Link>
         </button>
       </nav>
 
       {/* Mobile Menu */}
       <div className="flex lg:hidden items-center gap-4">
         <button className="bg-[#6173FD] text-white text-sm px-7 py-2 rounded-3xl">
+          <Link href="/components/contact-us">
           BOOK FREE DEMO
+          </Link>
         </button>
         <button onClick={toggleMenu} className="text-4xl text-[#6173FD]">
           {isMenuOpen ? <IoClose /> : <IoMenu />}
@@ -106,7 +131,10 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div ref={mobileMenuRef} className="absolute top-10 left-0 w-full bg-white lg:hidden mt-8 z-50">
+        <div
+          ref={mobileMenuRef}
+          className="absolute top-10 left-0 w-full bg-white lg:hidden mt-8 z-50"
+        >
           <ul className="flex flex-col items-center gap-4 py-4">
             <li>
               <Link href="/" className="hover:text-blue-600">
@@ -114,17 +142,26 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/components/contact-us" className="hover:text-blue-600">
+              <Link
+                href="/components/contact-us"
+                className="hover:text-blue-600"
+              >
                 Our Courses
               </Link>
             </li>
             <li>
-              <Link href="/components/exam-portal" className="hover:text-blue-600">
+              <Link
+                href="/components/exam-portal"
+                className="hover:text-blue-600"
+              >
                 Exam Portal
               </Link>
             </li>
             <li>
-              <Link href="/components/join-our-team" className="hover:text-blue-600">
+              <Link
+                href="/components/contact-us"
+                className="hover:text-blue-600"
+              >
                 Join Our Team
               </Link>
             </li>

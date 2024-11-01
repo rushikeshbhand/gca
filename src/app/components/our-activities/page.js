@@ -1,41 +1,57 @@
-"use client";
+"use client"; // Mark the component as a Client Component
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+const videos = [
+  "DX3sbFEWF0k", // Replace with your video IDs
+  "Dny79edv0Uk",
+  "suVseOqBIZs",
+  "JEaWu3XJx9A"
+];
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 
 export default function OurActivities() {
-  // State to track which tab is selected
   const [selectedTab, setSelectedTab] = useState("youtube");
+  const [shuffledVideos, setShuffledVideos] = useState([]);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
-  // Function to render the content based on the selected tab
+  useEffect(() => {
+    const shuffled = shuffleArray([...videos]);
+    setShuffledVideos(shuffled);
+  }, []);
+
   const renderContent = () => {
+    const currentVideoId = videos[0];
+    const embedUrl = `https://www.youtube.com/embed/${currentVideoId}`;
     switch (selectedTab) {
       case "youtube":
         return (
-          <div className="flex justify-center items-top h-full">
-            {/* Embed a YouTube video */}
+          <div className="flex justify-center items-center w-full h-full">
             <iframe
-              width="750"
-              height="360"
-              src="https://www.youtube.com/embed/ERCMXc8x7mc?si=NGIcwHTC1xUd1PNi"
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
+              src={embedUrl}
               title="YouTube video player"
-              className="rounded-xl border-8 border-[white] drop-shadow-2xl"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
           </div>
         );
       case "ourChamps":
         return (
-          <div className="flex justify-center items-center h-ful">
+          <div className="flex justify-center items-center w-full h-full">
             <iframe
-              width="750"
-              height="360"
-              src="https://www.youtube.com/embed/OgS1ZWZItno?si=9VKPKbENHyLn3RwC"
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
+              src="https://www.youtube.com/embed/suVseOqBIZs?si=iz4J6tBgtgyNY1DQ"
               title="YouTube video player"
-              className="rounded-xl border-8 border-[white] drop-shadow-2xl"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -44,14 +60,12 @@ export default function OurActivities() {
         );
       case "achievements":
         return (
-          <div className="flex justify-center items-center h-ful">
+          <div className="flex justify-center items-center w-full h-full">
             <iframe
-              width="750"
-              height="360"
-              src="https://www.youtube.com/embed/c2jdVw5-mpE?si=D4sWeX1jOTN6BuWz"
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
+              src="https://www.youtube.com/embed/R03RroVowqY?si=9grzy0FtVOFySG1_"
               title="YouTube video player"
-              className="rounded-xl border-8 border-[white] drop-shadow-2xl"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -60,30 +74,12 @@ export default function OurActivities() {
         );
       case "photoGallery":
         return (
-          <div className="flex justify-center items-center h-full">
+          <div className="flex justify-center items-center w-full h-full">
             <iframe
-              width="750"
-              height="360"
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-[18rem] rounded-xl border-4 border-white drop-shadow-2xl"
               src="https://www.youtube.com/embed/OgS1ZWZItno?si=9VKPKbENHyLn3RwC"
               title="YouTube video player"
-              className="rounded-xl border-8 border-[white] drop-shadow-2xl"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        );
-      case "essentials":
-        return (
-          <div className="flex justify-center items-center">
-            <iframe
-              width="750"
-              height="360"
-              src="https://www.youtube.com/embed/c2jdVw5-mpE?si=D4sWeX1jOTN6BuWz"
-              title="YouTube video player"
-              className="rounded-xl border-8 border-[white] drop-shadow-2xl"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -92,14 +88,12 @@ export default function OurActivities() {
         );
       default:
         return (
-          <div className="flex justify-center items-center h-full">
+          <div className="flex justify-center items-center w-full h-full">
             <iframe
-              width="750"
-              height="360"
+              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
               src="https://www.youtube.com/embed/qYNweeDHiyU?si=FcbbLqqnudYuP7wl"
               title="YouTube video player"
-              className="rounded-xl border-8 border-[white] drop-shadow-2xl"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
@@ -110,82 +104,38 @@ export default function OurActivities() {
   };
 
   return (
-    <div className="root max-w-[77vw] mx-auto -mt-52">
-      <div className="flex gap-11 justify-start items-center">
+    <div className="root max-w-[75vw] mx-auto -mt-52">
+      <div className="flex gap-5 justify-start items-center">
         <img
-          src="assets\images\our-activities-logo.svg"
+          src="assets/images/our-activities-logo.svg"
           alt="our activities logo"
-          className="w-[6rem]"
+          className="w-16 sm:w-20 md:w-24"
         />
-        <h2 className="text-2xl md:text-3xl lg:text-5xl text-[#4F4D74] font-extrabold">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#4F4D74] font-extrabold">
           Our Activities
         </h2>
       </div>
 
-      <div className="flex flex-col  items-center lg:items-start lg:flex-row text-lg whitespace-nowrap mt-5 md:text-xl lg:text-xl text-[#4F4D74] font-extrabold">
-        {/* Left side tabs */}
-        <div className=" p-4">
-          <ul className="flex flex-col gap-3 lg:gap-[3.3rem]">
-            <li
-              onClick={() => setSelectedTab("youtube")}
-              className={`cursor-pointer ${
-                selectedTab === "youtube"
-                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] py-1 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
-                  : "lg:max-w-[15vw] px-11 text-center"
-              }`}
-            >
-              YouTube
-            </li>
-            <li
-              onClick={() => setSelectedTab("ourChamps")}
-              className={`cursor-pointer ${
-                selectedTab === "ourChamps"
-                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] px-11 py-1 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
-                  : "lg:max-w-[15vw] px-11 text-center"
-              }`}
-            >
-              Our Champs
-            </li>
-            <li
-              onClick={() => setSelectedTab("achievements")}
-              className={`cursor-pointer ${
-                selectedTab === "achievements"
-                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] px-11 py-1 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
-                  : "lg:max-w-[15vw] px-11 text-center"
-              }`}
-            >
-              Achievements
-            </li>
-            <li
-              onClick={() => setSelectedTab("photoGallery")}
-              className={`cursor-pointer ${
-                selectedTab === "photoGallery"
-                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] px-11 py-1 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
-                  : "lg:max-w-[15vw] px-11 text-center"
-              }`}
-            >
-              Photo Gallery
-            </li>
-            <li
-              onClick={() => setSelectedTab("essentials")}
-              className={`cursor-pointer ${
-                selectedTab === "essentials"
-                  ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] px-11 py-1 bg-[#E2EBF4] text-center lg:max-w-[15vw]"
-                  : "lg:max-w-[15vw] px-11 text-center"
-              }`}
-            >
-              Essentials
-            </li>
+      <div className="flex flex-col items-center lg:items-start lg:flex-row text-sm sm:text-lg lg:text-xl text-[#4F4D74] font-extrabold mt-5">
+        <div className="p-4">
+          <ul className="flex flex-col gap-3 lg:gap-8">
+            {["youtube", "ourChamps", "achievements", "photoGallery"].map((tab) => (
+              <li
+                key={tab}
+                onClick={() => setSelectedTab(tab)}
+                className={`cursor-pointer px-4 py-2 text-center ${
+                  selectedTab === tab
+                    ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] bg-[#E2EBF4]"
+                    : ""
+                }`}
+              >
+                {tab.replace(/([A-Z])/g, " $1").replace(/^\w/, (c) => c.toUpperCase())}
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Right side content */}
-        <div className="w-3/4 p-4">
-          <div className="min-w-full">
-            {/* Render content based on selected tab */}
-            {renderContent()}
-          </div>
-        </div>
+        <div className="flex-1 h-full mt-5 lg:mt-0">{renderContent()}</div>
       </div>
     </div>
   );

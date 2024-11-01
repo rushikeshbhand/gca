@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function JoinUsNow() {
   return (
@@ -18,12 +19,14 @@ export default function JoinUsNow() {
           </div>
 
           <div className="flex flex-col gap-4 pb-10 px-4">
-            <h1 className="text-3xl text-center lg:text-justify font-extrabold">Book a Franchise</h1>
+            <h1 className="text-3xl text-center lg:text-justify font-extrabold">
+              Book a Franchise
+            </h1>
             <p className="text-center lg:text-justify">
               Begin your teaching venture now, own your <br /> franchise and
               earn right from your doorstep.
             </p>
-            <button className="px-10 py-3 mx-auto lg:mx-0 bg-white text-[#6072FA] rounded-3xl border-4 border-[#e3e3e6] w-[180px]">
+            <button className="px-10 py-3 mx-auto lg:mx-0 bg-white hover:bg-transparent text-[#6072FA] hover:text-white rounded-3xl border-4 border-[#e3e3e6] w-[180px]">
               Book Now
             </button>
           </div>
@@ -36,25 +39,31 @@ export default function JoinUsNow() {
                 Book Demo <br /> Class Now
               </h1>
             </div>
-            <button className="px-10 py-3 text-white bg-[#6072FA] rounded-3xl border-4 border-white w-[180px]">
+            <button className="px-10 py-3 text-white bg-[#6072FA] hover:bg-[#5164f1] rounded-3xl border-4 border-white w-[180px]">
+            <Link href="/components/contact-us">
               Book Now
+            </Link>
             </button>
           </div>
 
           <div className="card-three bg-[#17C7EE] h-[55vh] lg:w-2/3 border-8 border-[#f9f9fa] rounded-3xl drop-shadow-2xl">
             <div className="mx-6 min-h-[98%] bg-no-repeat flex justify-center">
               <div className="flex flex-col justify-center items-center md:relative md:top-14 md:left-2">
-                <h1 className="mb-6 text-3xl whitespace-nowrap z-10 md:relative md:-left-40">Exam Portal</h1>
-                
-                <button className="px-10 py-3 bg-white text-[#6072FA] rounded-3xl border-4 z-20 md:relative md:-left-40 border-[#e3e3e6] w-[180px]">
+                <h1 className="mb-6 text-3xl whitespace-nowrap z-10 md:relative md:-left-40">
+                  Exam Portal
+                </h1>
+
+                <button className="px-10 py-3 bg-white hover:bg-transparent text-[#6072FA] hover:text-white rounded-3xl border-4 z-20 md:relative md:-left-40 border-[#e3e3e6] w-[180px]">
                   Give Exam
                 </button>
                 <div className="w-[30rem] h-auto relative hidden md:block -z-0 -top-44 xl:-top-36">
-                  <img src="assets/images/tiger-on-bench.svg" alt="exam portal tiger" />
+                  <img
+                    src="assets/images/tiger-on-bench.svg"
+                    alt="exam portal tiger"
+                  />
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

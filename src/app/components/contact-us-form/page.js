@@ -61,7 +61,7 @@ export default function ContactUsForm() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-5 text-[#4F4D74]">
+    <div id="contact-us-form" className="max-w-3xl mx-auto mt-10 p-5 text-[#4F4D74]">
       <ToastContainer />
       <form className="p-4 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         {/* Name Field */}
@@ -213,7 +213,7 @@ export default function ContactUsForm() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className={`bg-[#6173FD] text-white font-bold py-3 px-4 w-full rounded-full ${
+            className={`bg-[#6173FD] hover:bg-[#5164f1] text-white font-bold py-3 px-4 w-full rounded-full ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             disabled={loading}

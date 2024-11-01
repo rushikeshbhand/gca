@@ -82,7 +82,7 @@ export default function About() {
               </div>
 
               <div className="flex justify-start md:justify-start">
-                <button className="py-2 px-12 rounded-full bg-[#16C6EC] text-white">
+                <button className="py-2 px-12 rounded-full bg-[#16C6EC] hover:bg-[#45d5f5] text-white">
                   KNOW MORE
                 </button>
               </div>
