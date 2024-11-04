@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 // import aboutBackground from "/assets/images/about-background.svg";
 
 export default function About() {
@@ -11,16 +12,16 @@ export default function About() {
         }}
 
       >
-        <div className="container flex flex-col md:flex-row gap-4 md:gap-11 mt-10 md:mt-16 p-4">
-          <div className="w-full md:w-[50%] flex justify-center">
+        <div className="container flex flex-col lg:flex-row gap-4 sm:gap-16 lg:gap-11 mt-10 md:mt-16 p-4">
+          <div className="w-full lg:w-[50%] flex justify-center mx-auto">
             <img
               src="assets/images/about.png"
               alt="about image"
               className="max-h-[30em] md:max-h-[40em] object-cover"
             />
           </div>
-          <div className="mt-10 md:mt-0 w-full md:w-[50%]">
-            <div className="text-[#4F4D74] flex flex-col gap-8 md:gap-12">
+          <div className="mt-10 md:mt-0 w-full lg:w-[50%] mx-auto">
+            <div className="text-[#4F4D74] flex flex-col gap-8 lg:gap-12">
               <div className="flex flex-row md:flex-row gap-5 items-center">
                 <img
                   src="assets/images/about-start-img.svg"
@@ -36,7 +37,7 @@ export default function About() {
                 <h1 className="flex justify-start text-4xl lg:text-5xl text-center md:text-left">
                   Who we are?
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg whitespace-wrap lg:max-w-[40vw]">
+                <p className="text-sm md:text-base lg:text-lg text-justify whitespace-wrap lg:max-w-[40vw]">
                   We Genius Champs Academy, a privately owned company
                   specializing in providing multiple brain development courses.
                   Our offerings cater to students, educators, and anyone seeking
@@ -83,7 +84,9 @@ export default function About() {
 
               <div className="flex justify-start md:justify-start">
                 <button className="py-2 px-12 rounded-full bg-[#16C6EC] hover:bg-[#45d5f5] text-white">
+                <Link href="/components/contact-us">
                   KNOW MORE
+                  </Link>
                 </button>
               </div>
             </div>
