@@ -1,12 +1,32 @@
 "use client"; // Mark the component as a Client Component
 
 import React, { useEffect, useState } from "react";
+import './our-activities.css';
 
 const videos = [
-  "DX3sbFEWF0k", // Replace with your video IDs
+  "DX3sbFEWF0k",
   "Dny79edv0Uk",
   "suVseOqBIZs",
   "JEaWu3XJx9A"
+];
+
+const galleryImages = [
+  "/assets/gcs-images/student-group-pic.JPG",
+  "/assets/gcs-images/student-group-pic2.JPG",
+  "/assets/gcs-images/student-group-pic3.JPG",
+  "/assets/gcs-images/student-group-pic4.JPG",
+  "/assets/gcs-images/student-group-pic5.JPG",
+  "/assets/gcs-images/student-group-pic6.JPG",
+  "/assets/gcs-images/student-group-pic7.JPG",
+  "/assets/gcs-images/student-group-pic8.JPG",
+  "/assets/gcs-images/student-group-pic9.JPG",
+  "/assets/gcs-images/student-group-pic10.JPG",
+  "/assets/gcs-images/student-group-pic11.JPG",
+  "/assets/gcs-images/student-group-pic12.JPG",
+  "/assets/gcs-images/student-group-pic13.JPG",
+  "/assets/gcs-images/student-group-pic14.JPG",
+  "/assets/gcs-images/student-group-pic15.JPG",
+  "/assets/gcs-images/student-group-pic16.JPG"
 ];
 
 const shuffleArray = (array) => {
@@ -20,12 +40,23 @@ const shuffleArray = (array) => {
 export default function OurActivities() {
   const [selectedTab, setSelectedTab] = useState("youtube");
   const [shuffledVideos, setShuffledVideos] = useState([]);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(null);
 
   useEffect(() => {
     const shuffled = shuffleArray([...videos]);
     setShuffledVideos(shuffled);
   }, []);
+
+  const openGallery = (image) => {
+    setActiveImage(image);
+    setGalleryOpen(true);
+  };
+
+  const closeGallery = () => {
+    setGalleryOpen(false);
+    setTimeout(() => setActiveImage(null), 300);
+  };
 
   const renderContent = () => {
     const currentVideoId = videos[0];
@@ -35,7 +66,7 @@ export default function OurActivities() {
         return (
           <div className="flex justify-center items-center w-full h-full">
             <iframe
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
+              className="w-full h-[13rem] min-w-[80vw] max-w-[35rem] sm:h-72 sm:min-w-[35rem] sm:max-w-md md:min-w-[35rem] lg:max-w-xl rounded-xl border-4 border-white drop-shadow-2xl"
               src={embedUrl}
               title="YouTube video player"
               frameBorder="0"
@@ -48,7 +79,7 @@ export default function OurActivities() {
         return (
           <div className="flex justify-center items-center w-full h-full">
             <iframe
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
+              className="w-full h-[13rem] min-w-[80vw] max-w-[35rem] sm:h-72 sm:min-w-[35rem] sm:max-w-md md:min-w-[35rem] lg:max-w-xl rounded-xl border-4 border-white drop-shadow-2xl"
               src="https://www.youtube.com/embed/suVseOqBIZs?si=iz4J6tBgtgyNY1DQ"
               title="YouTube video player"
               frameBorder="0"
@@ -62,7 +93,7 @@ export default function OurActivities() {
         return (
           <div className="flex justify-center items-center w-full h-full">
             <iframe
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-xl border-4 border-white drop-shadow-2xl"
+              className="w-full h-[13rem] min-w-[80vw] max-w-[35rem] sm:h-72 sm:min-w-[35rem] sm:max-w-md md:min-w-[35rem] lg:max-w-xl rounded-xl border-4 border-white drop-shadow-2xl"
               src="https://www.youtube.com/embed/R03RroVowqY?si=9grzy0FtVOFySG1_"
               title="YouTube video player"
               frameBorder="0"
@@ -72,20 +103,39 @@ export default function OurActivities() {
             ></iframe>
           </div>
         );
-      case "photoGallery":
-        return (
-          <div className="flex justify-center items-center w-full h-full">
-            <iframe
-              className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl h-[18rem] rounded-xl border-4 border-white drop-shadow-2xl"
-              src="https://www.youtube.com/embed/OgS1ZWZItno?si=9VKPKbENHyLn3RwC"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        );
+        case "photoGallery":
+          return (
+            <div className="flex justify-center items-center max-w-[45rem] flex-wrap overflow-y-scroll max-h-72 ">
+              <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 max-w-6xl mx-auto">
+                {galleryImages.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`Gallery image ${index + 1}`}
+                    className="object-cover w-full h-auto rounded cursor-pointer"
+                    onClick={() => openGallery(img)}
+                  />
+                ))}
+              </div>
+  
+              {/* Modal for Enlarged Image */}
+              {galleryOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+                  <button
+                    className="absolute top-5 right-5 text-white text-2xl font-bold"
+                    onClick={closeGallery}
+                  >
+                    &times;
+                  </button>
+                  <img
+                    src={activeImage}
+                    alt="Enlarged gallery image"
+                    className="max-w-full max-h-full rounded-lg"
+                  />
+                </div>
+              )}
+            </div>
+          );
       default:
         return (
           <div className="flex justify-center items-center w-full h-full">
