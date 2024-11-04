@@ -24,7 +24,7 @@ export default function GetInTouch() {
           </div>
           <h3 className="font-medium text-gray-700 mb-8">Contact Number</h3>
           <Link href="tel:9423631238">
-          <p className="text-gray-500 mt-2">+91 9423631238</p>
+          <p className="text-gray-500 mt-2">+91 9423631238 / <br/> +91 7972434489</p>
           </Link>
         </div>
 
