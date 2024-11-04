@@ -1,5 +1,6 @@
-'use client'
+"use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import Slider from "react-slick";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
@@ -11,19 +12,23 @@ export default function OurCoursesDesktop() {
   const courses = [
     {
       title: "Teacher Training",
-      icon: "assets/images/teacher-training.svg", // Replace with your icon paths
+      icon: "assets/images/teacher-training.svg",
+      description: `Transforms your brain into a lightning-fast calculator, making math a magical,mind-boosting superpower!`,
     },
     {
       title: "Abacus",
       icon: "assets/images/abacus.svg",
+      description: `transforms your brain into a lightning-fast calculator, making math a magical,mind-boosting superpower!`,
     },
     {
       title: "Mid Brain Activation",
       icon: "assets/images/mid-brain-activation.svg",
+      description: `transforms your brain into a lightning-fast calculator, making math a magical,mind-boosting superpower!`,
     },
     {
       title: "Hand Writing",
       icon: "assets/images/hand-writing.svg",
+      description: `transforms your brain into a lightning-fast calculator, making math a magical,mind-boosting superpower!`,
     },
   ];
 
@@ -49,7 +54,10 @@ export default function OurCoursesDesktop() {
   };
 
   return (
-    <div className="container min-h-[40vw] mx-auto pb-10 hidden lg:block justify-center text-[#4F4D74]">
+    <div
+      id="our-courses"
+      className="container min-h-[40vw] mx-auto pb-10 hidden lg:block justify-center text-[#4F4D74]"
+    >
       <Slider {...settings}>
         {courses.map((course, index) => (
           <div
@@ -64,15 +72,15 @@ export default function OurCoursesDesktop() {
               className=" -mb-10 w-44 mx-auto h-64 flex justify-center "
             />
 
-            <p className="text-base -mt-14 font-bold text-center">{course.title}</p>
+            <p className="text-base -mt-14 font-bold text-center">
+              {course.title}
+            </p>
 
             {activeSlide === index && (
               <>
-                <p className="text-xs text-center">
-                  It is a long established fact that a reader will be distracted.
-                </p>
+                <p className="text-xs text-center">{course.description}</p>
                 <button className="mt-4 px-4 py-1 text-xs bg-[#16C6EC] text-white rounded-full">
-                  KNOW MORE
+                  <Link href="/components/contact-us">KNOW MORE</Link>
                 </button>
               </>
             )}
@@ -82,12 +90,18 @@ export default function OurCoursesDesktop() {
 
       <div className="flex flex-row justify-center gap-7 -mt-[25px] lx:-mt-[60px]">
         {/* Left Arrow */}
-        <button className="previous drop-shadow-2xl p-3 bg-white rounded-full" onClick={() => document.querySelector(".slick-prev").click()}>
+        <button
+          className="previous drop-shadow-2xl p-3 bg-white rounded-full"
+          onClick={() => document.querySelector(".slick-prev").click()}
+        >
           <IoIosArrowBack size={24} />
         </button>
 
         {/* Right Arrow */}
-        <button className="next drop-shadow-2xl p-3 bg-white rounded-full" onClick={() => document.querySelector(".slick-next").click()}>
+        <button
+          className="next drop-shadow-2xl p-3 bg-white rounded-full"
+          onClick={() => document.querySelector(".slick-next").click()}
+        >
           <IoIosArrowForward size={24} />
         </button>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function OurCoursesMobile() {
   return (
-    <div className="my-20 text-[#4F4D74]">
+    <div id="our-courses" className="my-20 text-[#4F4D74]">
       {/* common code  */}
       <div className="text-center lg:max-h-[30px] mx-auto max-w-[80vw]">
         <h2 className="mb-3 text-4xl lg:text-5xl">Our Courses</h2>
