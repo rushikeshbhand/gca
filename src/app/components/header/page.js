@@ -15,12 +15,18 @@ export default function Header() {
 
   const handleNavClick = (navItem) => {
     setActiveNav(navItem);
+    setIsMenuOpen(false); // Closes menu on click for mobile
   };
 
   const getLinkStyle = (navItem) =>
     activeNav === navItem
       ? "bg-[#E2EBF4] text-[#4F4D74] rounded-3xl px-4 py-2"
-      : "px-4 py-2 ";
+      : "px-4 py-2";
+
+  const demoButtonStyle =
+    activeNav === "Book Free Demo"
+      ? "bg-[#E2EBF4] text-[#4F4D74] rounded-3xl px-7 py-2 ms-8 ring ring-[#E2EBF4]"
+      : "bg-[#6173FD] text-white px-7 py-2 rounded-3xl ms-8 ring ring-[#E2EBF4]";
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -38,6 +44,14 @@ export default function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMenuOpen]);
+
+  const scrollToOurCourses = (e) => {
+    e.preventDefault(); // Prevents default link behavior
+    const ourCoursesSection = document.getElementById("our-courses");
+    if (ourCoursesSection) {
+      ourCoursesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="flex gap-12 sm:gap-40 text-[#4F4D74] items-center w-full p-4 lg:px-20 justify-between lg:justify-center">
@@ -73,9 +87,12 @@ export default function Header() {
           />
           <li>
             <Link
-              href="/components/contact-us"
+              href="#our-courses"
               className={getLinkStyle("Our Courses")}
-              onClick={() => handleNavClick("Our Courses")}
+              onClick={(e) => {
+                handleNavClick("Our Courses");
+                scrollToOurCourses(e);
+              }}
             >
               Our Courses
             </Link>
@@ -88,7 +105,7 @@ export default function Header() {
           />
           <li>
             <Link
-              href="/components/exam-portal"
+              href="https://www.appadmin.geniuschampsacademy.com/gcaexam/examlogin.html"
               className={getLinkStyle("Exam Portal")}
               onClick={() => handleNavClick("Exam Portal")}
             >
@@ -103,7 +120,7 @@ export default function Header() {
           />
           <li>
             <Link
-              href="/components/contact-us"
+              href="https://www.geniuschampsacademy.com/franchise.php"
               className={getLinkStyle("Join Our Team")}
               onClick={() => handleNavClick("Join Our Team")}
             >
@@ -112,7 +129,10 @@ export default function Header() {
           </li>
         </ul>
 
-        <button className="bg-[#6173FD] text-white px-7 py-2 rounded-3xl ms-8 ring ring-[#E2EBF4]">
+        <button
+          className={demoButtonStyle}
+          onClick={() => handleNavClick("Book Free Demo")}
+        >
           <Link href="/components/contact-us">BOOK FREE DEMO</Link>
         </button>
       </nav>
@@ -120,9 +140,7 @@ export default function Header() {
       {/* Mobile Menu */}
       <div className="flex lg:hidden items-center gap-4">
         <button className="bg-[#6173FD] text-white text-sm px-7 py-2 rounded-3xl">
-          <Link href="/components/contact-us">
-          BOOK FREE DEMO
-          </Link>
+          <Link href="/components/contact-us">BOOK FREE DEMO</Link>
         </button>
         <button onClick={toggleMenu} className="text-4xl text-[#6173FD]">
           {isMenuOpen ? <IoClose /> : <IoMenu />}
@@ -137,30 +155,44 @@ export default function Header() {
         >
           <ul className="flex flex-col items-center gap-4 py-4">
             <li>
-              <Link href="/" className="hover:text-blue-600">
+              <Link
+                href="/"
+                className="hover:text-blue-600"
+                onClick={() => {
+                  handleNavClick("Home");
+                  setIsMenuOpen(false);
+                }}
+              >
                 Home
               </Link>
             </li>
             <li>
               <Link
-                href="/components/contact-us"
-                className="hover:text-blue-600"
+                href="#our-courses"
+                className={getLinkStyle("Our Courses")}
+                onClick={(e) => {
+                  handleNavClick("Our Courses");
+                  scrollToOurCourses(e);
+                  setIsMenuOpen(false);
+                }}
               >
                 Our Courses
               </Link>
             </li>
             <li>
               <Link
-                href="/components/exam-portal"
+                href="https://www.appadmin.geniuschampsacademy.com/gcaexam/examlogin.html"
                 className="hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Exam Portal
               </Link>
             </li>
             <li>
               <Link
-                href="/components/contact-us"
+                href="https://www.geniuschampsacademy.com/franchise.php"
                 className="hover:text-blue-600"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Join Our Team
               </Link>
