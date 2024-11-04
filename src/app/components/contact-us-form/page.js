@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
+import Image from "next/image";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import "./contact-us-form.css";

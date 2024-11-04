@@ -1,5 +1,6 @@
 import React from "react";
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 // import aboutBackground from "/assets/images/about-background.svg";
 
 export default function About() {
@@ -10,14 +11,15 @@ export default function About() {
         style={{
           backgroundImage: "url('/assets/images/about-background.svg')",
         }}
-
       >
         <div className="container flex flex-col lg:flex-row gap-4 sm:gap-16 lg:gap-11 mt-10 md:mt-16 p-4">
           <div className="w-full lg:w-[50%] flex justify-center mx-auto">
-            <img
-              src="assets/images/about.png"
+            <Image
+              src="/assets/images/about.png"
               alt="about image"
-              className="max-h-[30em] md:max-h-[40em] object-cover"
+              className="max-h-[40em] md:max-h-[40em] object-cover"
+              width={450}
+              height={900}
             />
           </div>
           <div className="mt-10 md:mt-0 w-full lg:w-[50%] mx-auto">
@@ -84,9 +86,7 @@ export default function About() {
 
               <div className="flex justify-start md:justify-start">
                 <button className="py-2 px-12 rounded-full bg-[#16C6EC] hover:bg-[#45d5f5] text-white">
-                <Link href="/components/contact-us">
-                  KNOW MORE
-                  </Link>
+                  <Link href="/components/contact-us">KNOW MORE</Link>
                 </button>
               </div>
             </div>

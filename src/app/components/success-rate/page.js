@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SuccessRate() {
   return (
@@ -9,10 +10,12 @@ export default function SuccessRate() {
         </p>
       </div>
       <div className="w-full max-w-[95vw] md:max-w-[70vw] lg:max-w-[74vw]">
-        <img
+        <Image
           src="assets/images/success-rate.svg"
           alt="success rate img"
           className="w-full object-contain"
+          width={500}
+          height={500}
         />
       </div>
     </div>

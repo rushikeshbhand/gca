@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function GetInTouch() {
   return (
@@ -15,16 +16,20 @@ export default function GetInTouch() {
         <div className="bg-white rounded-2xl p-4 text-start border-[3px] border-[#E2EBF4]">
           <div className="flex justify-start mb-4 relative">
             <div className="relative">
-              <img
+              <Image
                 src="../assets/images/phone.svg"
                 alt="phone icon"
                 className="rounded-md w-14 h-14 p-3 bg-[#74D997]"
+                width={500}
+                height={500}
               />
             </div>
           </div>
           <h3 className="font-medium text-gray-700 mb-8">Contact Number</h3>
           <Link href="tel:9423631238">
-          <p className="text-gray-500 mt-2">+91 9423631238 / <br/> +91 7972434489</p>
+            <p className="text-gray-500 mt-2">
+              +91 9423631238 / <br /> +91 7972434489
+            </p>
           </Link>
         </div>
 
@@ -32,10 +37,12 @@ export default function GetInTouch() {
         <div className="bg-white rounded-2xl p-4 text-start border-[3px] border-[#E2EBF4] overflow-hidden">
           <div className="flex justify-start mb-4 relative">
             <div className="relative">
-              <img
+              <Image
                 src="../assets/images/mail.svg"
                 alt="mail icon"
                 className="rounded-md w-14 h-14 p-3 bg-[#17C7EE]"
+                width={500}
+                height={500}
               />
             </div>
           </div>
@@ -53,10 +60,12 @@ export default function GetInTouch() {
         <div className="bg-white rounded-2xl p-4 text-start border-[3px] border-[#E2EBF4]">
           <div className="flex justify-start mb-4 relative">
             <div className="relative">
-              <img
+              <Image
                 src="../assets/images/mape.svg"
                 alt="mape icon"
                 className="rounded-md w-14 h-14 p-3 bg-[#EDD93C]"
+                width={500}
+                height={500}
               />
             </div>
           </div>

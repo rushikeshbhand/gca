@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from 'next/image'
 import Slider from "react-slick";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
@@ -66,10 +67,12 @@ export default function OurCoursesDesktop() {
               activeSlide === index ? "scale-150" : "scale-110"
             }`}
           >
-            <img
+            <Image
               src={course.icon}
               alt={course.title}
               className=" -mb-10 w-44 mx-auto h-64 flex justify-center "
+              width={500}
+              height={500}
             />
 
             <p className="text-base -mt-14 font-bold text-center">

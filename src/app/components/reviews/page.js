@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import Image from "next/image";
 import Slider from "react-slick";
 import "./reviews.css";
 import "slick-carousel/slick/slick.css";
@@ -77,10 +78,12 @@ export default function Reviews() {
             className="flex flex-row items-center gap-6 w-full p-4"
           >
             <div className="md:float-left w-36 h-36 bg-[#FFCD1A] rounded-full border-4 border-white flex-shrink-0 overflow-hidden mx-auto">
-              <img
+              <Image
                 src={review.avatar}
                 alt="avatar"
                 className="w-full h-full p-1 object-cover"
+                width={500}
+                height={500}
               />
             </div>
             <div className="flex flex-col flex-1 items-center">
@@ -92,7 +95,13 @@ export default function Reviews() {
                 <p className="text-xl font-semibold whitespace-nowrap">
                   {review.name}
                 </p>
-                <img src={review.stars} alt="stars" className="w-28" />{" "}
+                <Image
+                  src={review.stars}
+                  alt="stars"
+                  className="w-28"
+                  width={500}
+                  height={500}
+                />{" "}
                 {/* Reduced width for consistency */}
               </div>
               <p className="text-sm leading-relaxed text-center mt-2 sm:px-24">

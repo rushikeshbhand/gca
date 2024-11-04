@@ -1,14 +1,10 @@
 "use client"; // Mark the component as a Client Component
 
 import React, { useEffect, useState } from "react";
-import './our-activities.css';
+import Image from "next/image";
+import "./our-activities.css";
 
-const videos = [
-  "DX3sbFEWF0k",
-  "Dny79edv0Uk",
-  "suVseOqBIZs",
-  "JEaWu3XJx9A"
-];
+const videos = ["DX3sbFEWF0k", "Dny79edv0Uk", "suVseOqBIZs", "JEaWu3XJx9A"];
 
 const galleryImages = [
   "/assets/gcs-images/student-group-pic.JPG",
@@ -26,7 +22,7 @@ const galleryImages = [
   "/assets/gcs-images/student-group-pic13.JPG",
   "/assets/gcs-images/student-group-pic14.JPG",
   "/assets/gcs-images/student-group-pic15.JPG",
-  "/assets/gcs-images/student-group-pic16.JPG"
+  "/assets/gcs-images/student-group-pic16.JPG",
 ];
 
 const shuffleArray = (array) => {
@@ -103,39 +99,43 @@ export default function OurActivities() {
             ></iframe>
           </div>
         );
-        case "photoGallery":
-          return (
-            <div className="flex justify-center items-center max-w-[45rem] flex-wrap overflow-y-scroll max-h-72 ">
-              <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 max-w-6xl mx-auto">
-                {galleryImages.map((img, index) => (
-                  <img
-                    key={index}
-                    src={img}
-                    alt={`Gallery image ${index + 1}`}
-                    className="object-cover w-full h-auto rounded cursor-pointer"
-                    onClick={() => openGallery(img)}
-                  />
-                ))}
-              </div>
-  
-              {/* Modal for Enlarged Image */}
-              {galleryOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-                  <button
-                    className="absolute top-5 right-5 text-white text-2xl font-bold"
-                    onClick={closeGallery}
-                  >
-                    &times;
-                  </button>
-                  <img
-                    src={activeImage}
-                    alt="Enlarged gallery image"
-                    className="max-w-full max-h-full rounded-lg"
-                  />
-                </div>
-              )}
+      case "photoGallery":
+        return (
+          <div className="flex justify-center items-center max-w-[45rem] flex-wrap overflow-y-scroll max-h-72 ">
+            <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 max-w-6xl mx-auto">
+              {galleryImages.map((img, index) => (
+                <Image
+                  key={index}
+                  src={img}
+                  alt={`Gallery image ${index + 1}`}
+                  className="object-cover w-full h-auto rounded cursor-pointer"
+                  width={500}
+                  height={500}
+                  onClick={() => openGallery(img)}
+                />
+              ))}
             </div>
-          );
+
+            {/* Modal for Enlarged Image */}
+            {galleryOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+                <button
+                  className="absolute top-5 right-5 text-white text-2xl font-bold"
+                  onClick={closeGallery}
+                >
+                  &times;
+                </button>
+                <Image
+                  src={activeImage}
+                  alt="Enlarged gallery image"
+                  className="max-w-full max-h-full rounded-lg"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            )}
+          </div>
+        );
       default:
         return (
           <div className="flex justify-center items-center w-full h-full">
@@ -156,10 +156,12 @@ export default function OurActivities() {
   return (
     <div className="root max-w-[75vw] mx-auto -mt-52">
       <div className="flex gap-5 justify-start items-center">
-        <img
+        <Image
           src="assets/images/our-activities-logo.svg"
           alt="our activities logo"
           className="w-16 sm:w-20 md:w-24"
+          width={500}
+          height={500}
         />
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl text-[#4F4D74] font-extrabold">
           Our Activities
@@ -169,19 +171,23 @@ export default function OurActivities() {
       <div className="flex flex-col items-center lg:items-start lg:flex-row text-sm sm:text-lg lg:text-xl text-[#4F4D74] font-extrabold mt-5">
         <div className="p-4">
           <ul className="flex flex-col gap-3 lg:gap-8">
-            {["youtube", "ourChamps", "achievements", "photoGallery"].map((tab) => (
-              <li
-                key={tab}
-                onClick={() => setSelectedTab(tab)}
-                className={`cursor-pointer px-4 py-2 text-center ${
-                  selectedTab === tab
-                    ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] bg-[#E2EBF4]"
-                    : ""
-                }`}
-              >
-                {tab.replace(/([A-Z])/g, " $1").replace(/^\w/, (c) => c.toUpperCase())}
-              </li>
-            ))}
+            {["youtube", "ourChamps", "achievements", "photoGallery"].map(
+              (tab) => (
+                <li
+                  key={tab}
+                  onClick={() => setSelectedTab(tab)}
+                  className={`cursor-pointer px-4 py-2 text-center ${
+                    selectedTab === tab
+                      ? "font-bold border-4 border-y-0 border-r-0 border-l-[#EDA63C] bg-[#E2EBF4]"
+                      : ""
+                  }`}
+                >
+                  {tab
+                    .replace(/([A-Z])/g, " $1")
+                    .replace(/^\w/, (c) => c.toUpperCase())}
+                </li>
+              )
+            )}
           </ul>
         </div>
 
