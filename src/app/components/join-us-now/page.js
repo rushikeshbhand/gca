@@ -26,8 +26,10 @@ export default function JoinUsNow() {
               Begin your teaching venture now, own your <br /> franchise and
               earn right from your doorstep.
             </p>
-            <button className="px-10 py-3 mx-auto lg:mx-0 bg-white hover:bg-transparent text-[#6072FA] hover:text-white rounded-3xl border-4 border-[#e3e3e6] w-[180px]">
+            <button className="px-10 py-3 mx-auto lg:mx-0 bg-white text-[#6072FA] rounded-3xl border-8 border-[#e3e3e6] w-[180px]">
+            <Link href="https://www.geniuschampsacademy.com/franchise.php">
               Book Now
+            </Link>
             </button>
           </div>
         </div>
@@ -39,7 +41,7 @@ export default function JoinUsNow() {
                 Book Demo <br /> Class Now
               </h1>
             </div>
-            <button className="px-10 py-3 text-white bg-[#6072FA] hover:bg-[#5164f1] rounded-3xl border-4 border-white w-[180px]">
+            <button className="px-10 py-3 text-white bg-[#6072FA] rounded-3xl border-4 border-white w-[180px]">
             <Link href="/components/contact-us">
               Book Now
             </Link>
@@ -53,8 +55,10 @@ export default function JoinUsNow() {
                   Exam Portal
                 </h1>
 
-                <button className="px-10 py-3 bg-white hover:bg-transparent text-[#6072FA] hover:text-white rounded-3xl border-4 z-20 md:relative md:-left-40 border-[#e3e3e6] w-[180px]">
+                <button className="px-10 py-3 bg-white text-[#6072FA] rounded-3xl border-4 z-20 md:relative md:-left-40 border-[#e3e3e6] w-[180px]">
+                  <Link href="https://www.appadmin.geniuschampsacademy.com/gcaexam/examlogin.html">
                   Give Exam
+                  </Link>
                 </button>
                 <div className="w-[30rem] h-auto relative hidden md:block -z-0 -top-44 xl:-top-36">
                   <img
